@@ -1,9 +1,9 @@
 import './filtros.css'
 
-export const Filtros = () => {
+export const Filtros: React.FC = () => {
 	return (
 		<div className="filtros">
-			<label for="nombre">Filtrar por nombre:</label>
+			<label htmlFor="nombre">Filtrar por nombre:</label>
 			<input type="text" placeholder="Rick, Morty, Beth, Alien, ...etc" name="nombre" />
 		</div>
 	)

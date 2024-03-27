@@ -1,16 +1,8 @@
 import {Filtros} from "../componentes/personajes/filtros.componente"
 import {GrillaPersonajes} from "../componentes/personajes/grilla-personajes.componente"
-import {Paginacion} from "../componentes/paginacion/paginacion.componente";
- 
-/**
- * Esta es la pagina principal. Aquí se debera ver el panel de filtros junto con la grilla de personajes.
- * 
- * Uso: 
- * ``` <PaginaInicio /> ```
- * 
- * @returns la pagina de inicio
- */
-export const PaginaInicio = () => {
+import {Paginacion} from "../componentes/paginacion/paginacion.componente"
+
+export const PaginaInicio: React.FC = () => {
 	return (
 		<div className="container">
 			<div className="actions">
