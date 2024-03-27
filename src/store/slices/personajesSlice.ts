@@ -10,7 +10,7 @@ interface PersonajesState {
 }
 
 const initialState: PersonajesState = {
-  loading: false,
+  loading: true,
   error: null,
   personajes: [],
 };

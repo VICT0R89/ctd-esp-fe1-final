@@ -1,29 +1,32 @@
-import './Detalle.css';
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { BotonFavorito } from '../componentes/botones/boton-favorito.componente';
-import { RootState } from '../store/store';
-import { useSelector } from 'react-redux';
-import { SingleCharacter } from '../tipos/tipos';
+import './Detalle.css'
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { BotonFavorito } from '../componentes/botones/boton-favorito.componente'
+import { RootState } from '../store/store'
+import { useSelector } from 'react-redux'
+import { SingleCharacter } from '../tipos/tipos'
+import { BotonVolver } from '../componentes/botones/boton-volver.componente'
+import { Loading } from '../componentes/spinner/loading.component'
 
 export const PaginaDetalle: React.FC = () => {
 
-  const id = useParams()	
+  const {id} = useParams()	
   const favoritos = useSelector((state: RootState) => state.favorite.favorites)
   const character: SingleCharacter | undefined = useSelector(
-    (state: RootState) => state.personajes.personajes.find(personaje => personaje.id === Number(id.id))
+    (state: RootState) => state.personajes.personajes.find(personaje => personaje.id === Number(id))
   )
-	const personajes = useSelector((state: RootState) => state.personajes.personajes)
-	console.log(personajes)
 	
   if (!character) {
-    return <div>Cargando...</div>
+    return <Loading />
   }
-	
+
   const esFavorito = favoritos.some(fav => fav.id === Number(id))
   return (
     <div className="container">
-      <h3>{character.name}</h3>
+      <div className='detalle-title'>
+        <h3>{character.name}</h3>
+        <BotonVolver />
+      </div>
       <div className={'detalle'}>
         <div className={'detalle-header'}>
           <img src={character.image} alt={character.name} />

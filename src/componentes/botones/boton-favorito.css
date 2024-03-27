@@ -6,3 +6,10 @@
   width: 35px;
   height: 35px; 
 }
+
+.back-btn{
+  padding: 5px 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
